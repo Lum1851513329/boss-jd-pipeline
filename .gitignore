@@ -1,0 +1,105 @@
+# ============================================================================
+#  ⚠️ 上传前必读
+#  这个仓库会与 BOSS 直聘交互，运行过程中会在本地产生 **账号 Cookie** 和
+#  **浏览器 profile**。这两类文件一旦推到公开仓库，等于把账号交出去。
+#  下面的规则是最后一道防线 —— 请不要删除，也不要用 `git add -f` 绕过。
+# ============================================================================
+
+# ---------------------------------------------------------------- 凭据（最高优先级）
+# 登录态 Cookie：拿到就等于拿到账号
+.boss-agent/
+cookies.json
+cookies_*.json
+cookies_*.txt
+**/cookies*.json
+**/cookies*.txt
+
+# Cookie-Editor 导出的文件常被随手放在项目根或桌面
+*_cookies*.json
+*Cookies*.json
+
+# 浏览器 profile（内含 Cookie、LocalStorage、登录会话）
+*-profile/
+cdp-profile/
+edge-profile/
+**/cdp-profile/
+**/edge-profile/
+
+# 账号配置 / 代理（代理里可能带用户名密码）
+.boss-agent/config.json
+proxy.txt
+**/proxy.txt
+
+# ---------------------------------------------------------------- 本地配置
+# 工作区根目录标记文件（单行路径）；每个开发者机器上的路径都不一样
+.boss-base
+
+# ---------------------------------------------------------------- 抓取数据
+# 数据是运行产物，不是源码；且体积大、含企业信息
+岗位数据/
+data/
+output/
+*.xlsx
+*.xls
+
+# 除非你要把**脱敏后的样例**放进仓库，否则一律排除。
+# 如需提交示例，请先确认：无真实 cookie、无手机号、无邮箱、无个人姓名。
+!docs/sample/*.csv
+
+# ---------------------------------------------------------------- 运行时中间产物
+# 分块输入/输出、进度文件、实例锁、认领文件
+in_*.json
+out_*.json
+out_*.json.tmp*
+_jd_done*.json
+claim_*.lock
+*.lock.tmp
+*_含JD*.csv
+*_市场分析报告.md
+backfill*.log
+*.log
+
+# ---------------------------------------------------------------- Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+.venv/
+env/
+ENV/
+
+# ---------------------------------------------------------------- 工具与编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------------------------------------------------------------- 打包/临时
+*.zip
+*.tar.gz
+tmp/
+temp/
+.cache/

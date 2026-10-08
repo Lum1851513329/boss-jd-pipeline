@@ -1,0 +1,13 @@
+# BOSS 岗位采集流水线依赖
+# pip install -r requirements.txt
+
+patchright>=1.0.0        # 浏览器自动化（CDP 连接 + 注入 Cookie）
+psutil>=5.9.0            # 进程枚举 / 端口属主查询（实例锁、清理旧进程）
+websocket-client>=1.6.0  # CDP WebSocket（详情页抓取）
+openpyxl>=3.1.0          # 导出 Excel
+requests>=2.28.0         # HTTP
+
+# 说明：
+# * scraper/requirements.txt 是上游抓取内核自己的依赖（websocket-client + requests）。
+# * collect_city.py / collect2.py 额外需要 boss-agent CLI（pip 包 boss_agent_cli）；
+#   日常补抓流程不依赖它，可用 BOSS_CLI 环境变量指向 boss.exe。
